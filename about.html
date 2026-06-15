@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Gusteau's</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="img-logo">
+            <img src="static-images/Gusteau-transparent.png" alt="Gusteau's Logo">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="nav-links" id="nav-links">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="menu.html">Menu</a></div>
+            <div><a href="about.html">About Us</a></div>
+            <div><a href="gallery.html">Gallery</a></div>
+            <div><a href="contact.html">Contact Us</a></div>
+        </div>
+        <button class="cart-nav-btn" onclick="openCart()">&#128722; <span class="cart-count" id="cart-count">0</span></button>
+        <div class="hamburger" onclick="toggleHamburger()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <div class="about-section">
+        <h1>Our Story</h1>
+
+        <img src="static-images/chef.jpg" alt="Head Chef" class="chef-img">
+
+        <p>
+            Gusteau's had a radiacal belief: <strong>Anyone can cook.</strong>
+            Located at 15 Quai de la Tournelle, our restaurant opened its doors during the 1950s to authentic French cuisine to everyone.
+        </p>
+
+        <p>
+            Our founder, Gusteau, assembled a team of passionate, like-minded chefs with broad talents, from chefs who were trained in the finest culinary traditions of France to chefs of unknown origins.
+            From the very first night, the aroma of a new French cuisine filled the cobblestone street outside.
+        </p>
+
+        <p>
+            Over the years, Gusteau's earned a reputation not only for its <em>Ratatouille</em>, but for the nostalgia of mother's home cooking in every plate. We believe the kitchen is a place of creativity, courage, and connection.
+        </p>
+
+        <p>
+            Today, our menu celebrates the diversity of French cuisine and culture: from the rustic comfort food of traditional France to the delicate artistry of new-age cuisine. Every ingredient is sourced from local markets and trusted French producers who share our commitment to quality.
+        </p>
+
+        <p>
+            Join us for a quiet dinner for two, a family celebration, or to experience French cuisine made homely for you from chefs from all walks of life.
+        </p>
+
+        <p style="font-size:22px; color:#B07C4C; font-style:italic; margin-top:24px;">
+            "Anyone can cook!"
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Gusteau's Fine French Cuisine</h3>
+        <p>15 Quai de la Tournelle, 75005 Paris, France</p>
+        <p>Mon–Sun 11:00 AM – 10:00 PM</p>
+        <p>Phone: +33 1 0622 2007 | Email: eatery@gusteau.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Gusteau's Restaurant. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Panel -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>&#128722; Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()">&#215;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total" id="cart-total">Total: <span>$0.00</span></div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="alert('Thank you! Your order has been placed.')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

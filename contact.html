@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Gusteau's</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="img-logo">
+            <img src="static-images/Gusteau-transparent.png" alt="Gusteau's Logo">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="nav-links" id="nav-links">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="menu.html">Menu</a></div>
+            <div><a href="about.html">About Us</a></div>
+            <div><a href="gallery.html">Gallery</a></div>
+            <div><a href="contact.html">Contact Us</a></div>
+        </div>
+        <button class="cart-nav-btn" onclick="openCart()">&#128722; <span class="cart-count" id="cart-count">0</span></button>
+        <div class="hamburger" onclick="toggleHamburger()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Contact Info-->
+    <div class="contact-wrapper">
+
+        <div class="contact-info">
+            <h2>Find Us</h2>
+            <p>15 Quai de la Tournelle<br>75005 Paris, France</p>
+            <p>+33 1 0622 2007</p>
+            <p>eatery@gusteau.com</p>
+            <p>Mon – Sun: 11:00 AM – 10:00 PM</p>
+            <br>
+            <h2>Reservations</h2>
+            <p>For groups of 6 or more, please call us directly or send a message using the form. We recommend booking at least 48 hours in advance.</p>
+        </div>
+
+        <div class="contact-form-box">
+            <h2>Send a Message</h2>
+            <form onsubmit="submitForm(event)">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required>
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" required>
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Your message or reservation request..." required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+    </div>
+
+    <!-- Google Maps -->
+    <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2625.4401391900196!2d2.3524042766282096!3d48.84981687133096!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e671e4b5a12d83%3A0x8dcf6e46e0e4b19!2s15%20Quai%20de%20la%20Tournelle%2C%2075005%20Paris%2C%20France!5e0!3m2!1sen!2sus!4v1781197590535!5m2!1sen!2sus"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Gusteau's Fine French Cuisine</h3>
+        <p>15 Quai de la Tournelle, 75005 Paris, France</p>
+        <p>Mon–Sun 11:00 AM – 10:00 PM</p>
+        <p>Phone: +33 1 0622 2007 | Email: eatery@gusteau.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Gusteau's Restaurant. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Panel -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>&#128722; Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()">&#215;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total" id="cart-total">Total: <span>$0.00</span></div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="alert('Thank you! Your order has been placed.')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+        function submitForm(e) {
+            e.preventDefault();
+            var name = document.getElementById("name").value;
+            alert("Thank you, " + name + "! We have received your message and will be in touch shortly.");
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>

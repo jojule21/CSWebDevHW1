@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusteau's Menu</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="img-logo">
+            <img src="static-images/Gusteau-transparent.png" alt="Gusteau's Logo">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="nav-links" id="nav-links">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="menu.html">Menu</a></div>
+            <div><a href="about.html">About Us</a></div>
+            <div><a href="gallery.html">Gallery</a></div>
+            <div><a href="contact.html">Contact Us</a></div>
+        </div>
+        <button class="cart-nav-btn" onclick="openCart()">&#128722; <span class="cart-count" id="cart-count">0</span></button>
+        <div class="hamburger" onclick="toggleHamburger()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Menu -->
+    <div class="menu">
+        <h1>Our Menu</h1>
+
+        <!-- Starters -->
+        <div class="menu-section">
+            <h2>Starters</h2>
+            <table class="menu-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Remy's Herb Soup</td>
+                    <td>Pot of soup with a handful of saffron and herbs</td>
+                    <td>$12.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Remy\'s Herb Soup', 12.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Leek Velouté</td>
+                    <td>Silky leek and potato soup</td>
+                    <td>$11.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Leek Velouté', 11.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Mushrooms on Brioche</td>
+                    <td>Wild mushrooms sautéed in butter and thyme, served on toasted brioche</td>
+                    <td>$13.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Mushrooms on Brioche', 13.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Camembert Crostini</td>
+                    <td>Warm Camembert on baguette with fig jam</td>
+                    <td>$14.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Camembert Crostini', 14.00)">+ Add</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Mains -->
+        <div class="menu-section">
+            <h2>Main Courses</h2>
+            <table class="menu-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Ratatouille (Confit Byaldi)</td>
+                    <td>Thinly sliced courgette, tomato, and pepper slow-roasted in olive oil</td>
+                    <td>$24.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Ratatouille (Confit Byaldi)', 24.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Sweetbreads Provençale</td>
+                    <td>Pan-seared veal sweetbreads with herbed jus and roasted garlic</td>
+                    <td>$28.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Sweetbreads Provençale', 28.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Cheese Soufflé</td>
+                    <td>A golden, cloud-light Gruyère soufflé</td>
+                    <td>$22.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Cheese Soufflé', 22.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Roasted Chicken with Herbs</td>
+                    <td>Free-range chicken, roasted over thyme and rosemary</td>
+                    <td>$26.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Roasted Chicken with Herbs', 26.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Linguini's Pasta</td>
+                    <td>Butter-tossed linguine with shallots, white wine, and fresh parsley</td>
+                    <td>$20.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Linguini\'s Pasta', 20.00)">+ Add</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Desserts -->
+        <div class="menu-section">
+            <h2>Desserts</h2>
+            <table class="menu-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Crème Brûlée</td>
+                    <td>Vanilla custard with a perfectly torched caramel crust </td>
+                    <td>$10.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Crème Brûlée', 10.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Strawberry Tart</td>
+                    <td>Buttery pastry shell, vanilla crème pâtissière, glazed fresh strawberries </td>
+                    <td>$11.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Strawberry Tart', 11.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Chocolate Cake</td>
+                    <td>Rich, dense Parisian-style chocolate gâteau</td>
+                    <td>$9.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Chocolate Cake', 9.00)">+ Add</button></td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Drinks -->
+        <div class="menu-section">
+            <h2>Drinks</h2>
+            <table class="menu-table">
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th></th>
+                </tr>
+                <tr>
+                    <td>Burgundy Red Wine</td>
+                    <td>A glass of Burgundy</td>
+                    <td>$13.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Burgundy Red Wine', 13.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Baguette & Butter</td>
+                    <td>A fresh-baked Parisian baguette with cultured butter</td>
+                    <td>$5.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Baguette & Butter', 5.00)">+ Add</button></td>
+                </tr>
+                <tr>
+                    <td>Café au Lait</td>
+                    <td>Strong French press coffee with steamed whole milk</td>
+                    <td>$6.00</td>
+                    <td><button class="add-to-cart-btn" onclick="addToCart('Café au Lait', 6.00)">+ Add</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <footer>
+        <h3>Gusteau's Fine French Cuisine</h3>
+        <p>15 Quai de la Tournelle, 75005 Paris, France</p>
+        <p>Mon–Sun 11:00 AM – 10:00 PM</p>
+        <p>Phone: +33 1 0622 2007 | Email: eatery@gusteau.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Gusteau's Restaurant. All rights reserved.</p>
+    </footer>
+    
+    <!-- Cart Panel -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>&#128722; Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()">&#215;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total" id="cart-total">Total: <span>$0.00</span></div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="alert('Thank you! Your order has been placed.')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+</body>
+</html>

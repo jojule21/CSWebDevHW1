@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gusteau's Gallery</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="img-logo">
+            <img src="static-images/Gusteau-transparent.png" alt="Gusteau's Logo">
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <div class="container">
+        <div class="nav-links" id="nav-links">
+            <div><a href="index.html">Home</a></div>
+            <div><a href="menu.html">Menu</a></div>
+            <div><a href="about.html">About Us</a></div>
+            <div><a href="gallery.html">Gallery</a></div>
+            <div><a href="contact.html">Contact Us</a></div>
+        </div>
+        <button class="cart-nav-btn" onclick="openCart()">&#128722; <span class="cart-count" id="cart-count">0</span></button>
+        <div class="hamburger" onclick="toggleHamburger()">
+            <span></span><span></span><span></span>
+        </div>
+    </div>
+
+    <!-- Gallery Slider -->
+    <div class="gallery-section">
+        <h1>Our Gallery</h1>
+
+        <div class="slideshow-container">
+
+            <div class="slide">
+                <img src="static-images/guesteauslogo.jpg" alt="Gusteau's Logo Outside">
+                <div class="slide-caption">Our logo outside the restaurant</div>
+            </div>
+
+            <div class="slide">
+                <img src="static-images/chefs.jpg" alt="Gusteau's Chefs">
+                <div class="slide-caption">Our chefs at work</div>
+            </div>
+
+            <div class="slide">
+                <img src="static-images/Alfredo-Linguini.Ratatouille.png" alt="Our Head Chef">
+                <div class="slide-caption">Our head chef</div>
+            </div>
+
+            <div class="slide">
+                <img src="static-images/restaurant.jpg" alt="Restaurant Interior">
+                <div class="slide-caption">An evening at Gusteau's</div>
+            </div>
+
+            <div class="slide">
+                <img src="static-images/chefsatwork.jpg" alt="French cuisine being made">
+                <div class="slide-caption">French cuisine being made</div>
+            </div>
+
+            <div class="slide">
+                <img src="static-images/ratatouille.png" alt="Ratatouille">
+                <div class="slide-caption">Chef's Signature Ratatouille</div>
+            </div>
+
+            <button class="prev-btn" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="next-btn" onclick="changeSlide(1)">&#10095;</button>
+        </div>
+
+        <div class="dot-row" id="dot-row"></div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h3>Gusteau's Fine French Cuisine</h3>
+        <p>15 Quai de la Tournelle, 75005 Paris, France</p>
+        <p>Mon–Sun 11:00 AM – 10:00 PM</p>
+        <p>Phone: +33 1 0622 2007 | Email: eatery@gusteau.com</p>
+        <div class="social-links">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter / X</a>
+            <a href="#">YouTube</a>
+        </div>
+        <p class="footer-bottom">&copy; 2025 Gusteau's Restaurant. All rights reserved.</p>
+    </footer>
+
+    <!-- Cart Panel -->
+    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <div class="cart-panel" id="cart-panel">
+        <div class="cart-header">
+            <h2>&#128722; Your Cart</h2>
+            <button class="close-cart" onclick="closeCart()">&#215;</button>
+        </div>
+        <div class="cart-items" id="cart-items"></div>
+        <div class="cart-footer">
+            <div class="cart-total" id="cart-total">Total: <span>$0.00</span></div>
+            <div class="cart-actions">
+                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
+                <button class="checkout-btn" onclick="alert('Thank you! Your order has been placed.')">Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="cart.js"></script>
+    <script>
+        var slideIndex = 0;
+        var slides = document.getElementsByClassName("slide");
+        var dotRow = document.getElementById("dot-row");
+
+        // Build dots
+        for (var i = 0; i < slides.length; i++) {
+            var dot = document.createElement("span");
+            dot.className = "dot";
+            dot.setAttribute("onclick", "goToSlide(" + i + ")");
+            dotRow.appendChild(dot);
+        }
+
+        function showSlide(n) {
+            if (n >= slides.length) slideIndex = 0;
+            if (n < 0) slideIndex = slides.length - 1;
+            for (var i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            var dots = document.getElementsByClassName("dot");
+            for (var i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active");
+            }
+            slides[slideIndex].style.display = "block";
+            dots[slideIndex].classList.add("active");
+        }
+
+        function changeSlide(n) {
+            slideIndex += n;
+            showSlide(slideIndex);
+        }
+
+        function goToSlide(n) {
+            slideIndex = n;
+            showSlide(slideIndex);
+        }
+
+        showSlide(slideIndex);
+    </script>
+</body>
+</html>
