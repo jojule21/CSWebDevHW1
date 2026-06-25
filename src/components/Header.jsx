@@ -2,13 +2,12 @@ import logo from '../assets/Gusteau-transparent.png'
 
 function Header() {
   return (
-    // hidden on small screens — on mobile the logo lives in the nav bar instead
-    <header className="hidden md:block bg-[#FBE18B] text-center pt-4">
+    <header className="bg-[#FBE18B] text-center pt-4">
       <div className="flex justify-center items-center py-2.5">
         <img
           src={logo}
           alt="Gusteau's Logo"
-          className="w-[20%] max-w-[300px] min-w-[80px] h-auto"
+          className="w-[60%] sm:w-[45%] md:w-[20%] max-w-[300px] min-w-[80px] h-auto"
         />
       </div>
     </header>

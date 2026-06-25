@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import logo from '../assets/Gusteau-transparent.png'
 
 // the nav links, listed once and reused for both the desktop bar and the mobile dropdown
 const navLinks = [
@@ -29,10 +28,15 @@ function Navbar({ cartCount, onOpenCart }) {
       {/* Top bar */}
       <div className="flex items-center">
 
-        {/* Small logo on the left (mobile only) */}
-        <Link to="/" onClick={closeMenu} className="md:hidden flex items-center px-3 py-1.5">
-          <img src={logo} alt="Gusteau's Logo" className="h-12 w-auto" />
-        </Link>
+        {/* Hamburger on the left (mobile only) */}
+        <div
+          className="flex md:hidden flex-col cursor-pointer px-5 py-[18px] gap-[5px]"
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
+          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
+          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
+        </div>
 
         {/* Nav links shown inline (desktop only) */}
         <div className="hidden md:flex md:flex-1">
@@ -43,7 +47,7 @@ function Navbar({ cartCount, onOpenCart }) {
           ))}
         </div>
 
-        {/* Cart button */}
+        {/* Cart button on the right */}
         <button
           className="ml-auto px-5 text-[#B07C4C] text-[22px] bg-transparent border-none cursor-pointer flex items-center"
           onClick={onOpenCart}
@@ -53,16 +57,6 @@ function Navbar({ cartCount, onOpenCart }) {
             {cartCount}
           </span>
         </button>
-
-        {/* Hamburger (mobile only) */}
-        <div
-          className="flex md:hidden flex-col cursor-pointer px-5 py-[18px] gap-[5px]"
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
-          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
-          <span className="block w-[26px] h-[3px] bg-[#B07C4C] rounded-sm"></span>
-        </div>
       </div>
 
       {/* Nav links as a dropdown below the bar (mobile only, when open) */}
