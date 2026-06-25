@@ -1,93 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Gusteau's</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gusteau's Restaurant</title>
 </head>
 <body>
-
-    <!-- Header -->
-    <header class="site-header">
-        <div class="img-logo">
-            <img src="static-images/Gusteau-transparent.png" alt="Gusteau's Logo">
-        </div>
-    </header>
-
-    <!-- Navigation -->
-    <div class="container">
-        <div class="nav-links" id="nav-links">
-            <div><a href="index.html">Home</a></div>
-            <div><a href="menu.html">Menu</a></div>
-            <div><a href="about.html">About Us</a></div>
-            <div><a href="gallery.html">Gallery</a></div>
-            <div><a href="contact.html">Contact Us</a></div>
-        </div>
-        <button class="cart-nav-btn" onclick="openCart()">&#128722; <span class="cart-count" id="cart-count">0</span></button>
-        <div class="hamburger" onclick="toggleHamburger()">
-            <span></span><span></span><span></span>
-        </div>
-    </div>
-
-    <!-- Hero -->
-    <div class="hero">
-        <img src="static-images/ratatouille.png" alt="Gusteau's Restaurant">
-        <div class="hero-text">
-            <h1>Gusteau's</h1>
-            <p>Anyone Can Cook!</p>
-            <a href="menu.html" class="hero-btn">View Our Menu</a>
-        </div>
-    </div>
-
-    <!-- Welcome biography -->
-    <div style="max-width:700px; margin:40px auto; text-align:center; padding:0 20px;">
-        <h2 style="color:#103852; font-size:26px; margin-bottom:14px;">Bienvenue à Gusteau's</h2>
-        <p style="font-size:17px; line-height:1.8; color:#103852;">
-            Located at 15 Quai de la Tournelle, Gusteau's has been a sanctuary of authentic French cuisine since the 1950s. Whether you come for our legendary Ratatouille or drink a glass of wine, every visit is a culinary journey.
-        </p>
-        <div style="margin-top:24px;">
-            <div style="font-size:36px; color:#B07C4C; letter-spacing:6px;">&#11088;&#11088;&#11088;&#11088;&#11088;</div>
-            <blockquote style="margin-top:18px; color:#103852; font-style:italic; font-size:17px; line-height:1.8; border-left:4px solid #B07C4C; padding-left:16px; text-align:left; display:inline-block;">
-                "Last night, I experienced something new: an extraordinary meal from a singularly unexpected source.
-                To say that both the meal and its maker have challenged my preconceptions about fine cooking
-                is a gross understatement. They have rocked me to my core."
-            </blockquote>
-            <p style="margin-top:10px; color:#B07C4C; font-size:15px;">— Anton Ego, Food Critic</p>
-        </div>
-    </div>
-
-    <footer>
-        <h3>Gusteau's Fine French Cuisine</h3>
-        <p>15 Quai de la Tournelle, 75005 Paris, France</p>
-        <p>Mon–Sun 11:00 AM – 10:00 PM</p>
-        <p>Phone: +33 1 0622 2007 | Email: eatery@gusteau.com</p>
-        <div class="social-links">
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-            <a href="#">Twitter / X</a>
-            <a href="#">YouTube</a>
-        </div>
-        <p class="footer-bottom">&copy; 2025 Gusteau's Restaurant. All rights reserved.</p>
-    </footer>
-
-    <!-- Cart -->
-    <div class="cart-overlay" id="cart-overlay" onclick="closeCart()"></div>
-    <div class="cart-panel" id="cart-panel">
-        <div class="cart-header">
-            <h2>&#128722; Your Cart</h2>
-            <button class="close-cart" onclick="closeCart()">&#215;</button>
-        </div>
-        <div class="cart-items" id="cart-items"></div>
-        <div class="cart-footer">
-            <div class="cart-total" id="cart-total">Total: <span>$0.00</span></div>
-            <div class="cart-actions">
-                <button class="clear-cart-btn" onclick="clearCart()">Clear Cart</button>
-                <button class="checkout-btn" onclick="alert('Thank you! Your order has been placed.')">Checkout</button>
-            </div>
-        </div>
-    </div>
-
-    <script src="cart.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
 </body>
 </html>

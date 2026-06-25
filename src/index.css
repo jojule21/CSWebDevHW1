@@ -1,0 +1,9 @@
+@import "tailwindcss";
+
+/* Base styles carried over from Homework 1 */
+body {
+    background-color: #FBE18B;
+    font-family: Georgia, serif;
+    color: #103852;
+    margin: 0;
+}
